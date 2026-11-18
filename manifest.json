@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Search Google in Docs",
+  "version": "1.0.0",
+  "description": "Adds a 'Search Google for selection' option directly into the Google Docs right-click context menu.",
+  "permissions": [
+    "clipboardRead"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/document/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/document/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
